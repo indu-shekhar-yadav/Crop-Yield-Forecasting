@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crop Yield Forecasting Per Country</title>
+    <style>
+        /* Styles for the input form page */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('2.avif') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1.text-center {
+            text-align: center;
+            font-weight: 700;
+            font-size: 42px;
+            font-family: 'Franziska', Georgia, Cambria;
+            color: rgb(105, 60, 6);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(122, 184, 196, 0.5);
+            border-radius: 20px;
+            color: rgb(28, 15, 150);
+            font-family: Inter, Arial, sans-serif;
+            letter-spacing: 0.55px;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        h1.text-danger {
+            text-align: center;
+            color: #166fdb;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #6fa3d8bb;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 20px;
+            font-family: 'Freight Big Pro', Arial, sans-serif;
+            font-weight: normal;
+            background-color: #2e23c86e;
+            color: rgb(152, 185, 212);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #1a008d;
+        }
+
+        .back-btn {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .back-btn:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Input Form Page -->
+    <h1 class="text-center">Crop Yield Forecasting Per Country</h1>
+
+    <div class="container">
+        <h1 class="text-danger">Input All Features Here</h1>
+
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="Year">Year</label>
+                <input type="number" id="Year" name="Year" step="any" value="2013" required>
+            </div>
+            <div class="form-group">
+                <label for="average_rain_fall_mm_per_year">Average Rainfall (mm/year)</label>
+                <input type="number" id="average_rain_fall_mm_per_year" name="average_rain_fall_mm_per_year" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="pesticides_tonnes">Pesticides (tonnes)</label>
+                <input type="number" id="pesticides_tonnes" name="pesticides_tonnes" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="avg_temp">Average Temperature (°C)</label>
+                <input type="number" id="avg_temp" name="avg_temp" step="any" required>
+            </div>
+            <div class="form-group">
+                <label for="Area">Area</label>
+                <input type="text" id="Area" name="Area" required>
+            </div>
+            <div class="form-group">
+                <label for="Item">Item</label>
+                <input type="text" id="Item" name="Item" required>
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

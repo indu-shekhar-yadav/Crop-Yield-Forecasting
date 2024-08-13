@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediction Result</title>
+    <style>
+        .result-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #343a40;
+            color: white;
+        }
+
+        .result {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .result-container .back-btn {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #198754;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result-container .back-btn:hover {
+            background-color: #145a32;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="result">Predicted Yield: {{ prediction }}</div>
+        <a href="/"><button class="back-btn">Back to Home</button></a>
+    </div>
+</body>
+</html>
